@@ -6,7 +6,7 @@ Release:	1
 Copyright:	GPL
 Group:		Applications/Communications
 Source:		ftp://ftp.ohse.de/uwe/releases/%{name}-%{version}.tar.gz
-BuildRoot:	/tmp/%{name}-%{version}-root
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 This collection of commands contains tools to send and receive
