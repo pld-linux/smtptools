@@ -5,6 +5,7 @@ Version:	0.2.3
 Release:	1
 Copyright:	GPL
 Group:		Applications/Communications
+Group(pl):      Aplikacje/Komunikacja
 Source:		ftp://ftp.ohse.de/uwe/releases/%{name}-%{version}.tar.gz
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
