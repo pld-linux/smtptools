@@ -21,7 +21,6 @@ wiadomo¶ci poprzez SMTP.
 %setup -q
 
 %build
-LDFLAGS="-s"; export LDFLAGS
 %configure
 %{__make}
 
@@ -30,8 +29,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %{__make} install DESTDIR=$RPM_BUILD_ROOT
 
-gzip -9nf $RPM_BUILD_ROOT%{_mandir}/man1/* \
-	AUTHORS ChangeLog NEWS README README.smtpblast README.usmtpd \
+gzip -9nf AUTHORS ChangeLog NEWS README README.smtpblast README.usmtpd \
 	README.tomaildir README.cvs
 
 %clean
@@ -39,8 +37,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc {AUTHORS,ChangeLog,NEWS,README,README.smtpblast,README.usmtpd}.gz
-%doc {README.tomaildir,README.cvs}.gz
+%doc *.gz
 %attr(755,root,root) %{_sbindir}/usmtpd
 %attr(755,root,root) %{_bindir}/tomaildir
 %attr(755,root,root) %{_bindir}/maildirblast
