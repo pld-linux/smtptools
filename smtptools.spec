@@ -22,7 +22,7 @@ wiadomo¶ci poprzez SMTP.
 %setup -q
 
 %build
-aclocal
+%{__aclocal}
 %{__autoconf}
 %configure
 %{__make}
