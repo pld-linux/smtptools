@@ -2,11 +2,13 @@ Summary:	smtptools - tools for the Simple Mail Transfer Protocol
 Summary(pl):	Narzêdzia do przesy³ania poczty poprzez SMTP
 Name:		smtptools
 Version:	0.2.3
-Release:	2
+Release:	3
 License:	GPL
 Group:		Applications/Communications
 Source0:	ftp://ftp.ohse.de/uwe/releases/%{name}-%{version}.tar.gz
 # Source0-md5:	16dd9da7b1b9c7462f207695ae323034
+Patch0:		%{name}-link.patch
+URL:		http://www.ohse.de/uwe/software/smtptools.html
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -21,10 +23,13 @@ wiadomo¶ci poprzez SMTP.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 %{__aclocal}
 %{__autoconf}
+%{__autoheader}
+%{__automake}
 %configure
 %{__make}
 
