@@ -3,10 +3,11 @@ Summary(pl):	narzêdzia do przesy³ania poczty poprzez SMTP
 Name:		smtptools
 Version:	0.2.3
 Release:	1
-Copyright:	GPL
+License:	GPL
 Group:		Applications/Communications
-Group(pl):      Aplikacje/Komunikacja
-Source:		ftp://ftp.ohse.de/uwe/releases/%{name}-%{version}.tar.gz
+Group(de):	Applikationen/Kommunikation
+Group(pl):	Aplikacje/Komunikacja
+Source0:	ftp://ftp.ohse.de/uwe/releases/%{name}-%{version}.tar.gz
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -14,7 +15,7 @@ This collection of commands contains tools to send and receive
 messsages with SMTP.
 
 %description -l pl
-To jest kolekcja komand pozwalaj±cych na wysy³anie i odbieranie
+To jest kolekcja komaed pozwalaj±cych na wysy³anie i odbieranie
 wiadomo¶ci poprzez SMTP.
 
 %prep
