@@ -2,7 +2,7 @@ Summary:	smtptools - tools for the Simple Mail Transfer Protocol
 Summary(pl):	narzêdzia do przesy³ania poczty poprzez SMTP
 Name:		smtptools
 Version:	0.2.3
-Release:	1
+Release:	2
 License:	GPL
 Group:		Applications/Communications
 Group(de):	Applikationen/Kommunikation
@@ -22,6 +22,8 @@ wiadomo¶ci poprzez SMTP.
 %setup -q
 
 %build
+aclocal
+autoconf
 %configure
 %{__make}
 
