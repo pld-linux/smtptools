@@ -1,39 +1,42 @@
-Summary: smtptools - tools for the Simple Mail Transfer Protocol
-Name: smtptools
-Version: 0.2.2
-Release: 0
-Copyright: GPL
-Group: Applications/Communications
-Source: ftp://ftp.ohse.de/uwe/releases/smtptools-0.2.2.tar.gz
-BuildRoot: /var/tmp/smtptools-root
+Summary:	smtptools - tools for the Simple Mail Transfer Protocol
+Name:		smtptools
+Version:	0.2.2
+Release:	1
+Copyright:	GPL
+Group:		Applications/Communications
+Source:		ftp://ftp.ohse.de/uwe/releases/%{name}-%{version}.tar.gz
+BuildRoot:	/tmp/%{name}-%{version}-root
 
 %description
 This collection of commands contains tools to send and receive
 messsages with SMTP.
 
 %prep
-%setup
+%setup -q
 
 %build
-CFLAGS="$RPM_OPT_FLAGS" ./configure --prefix=/usr
+CFLAGS="$RPM_OPT_FLAGS" ./configure --prefix=%{_prefix}
 make
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
-make prefix=$RPM_BUILD_ROOT/usr install
+make install prefix=$RPM_BUILD_ROOT%{_prefix} \
+	mandir=$RPM_BUILD_ROOT%{_mandir}
 
-%files
-%defattr(-,root,root)
-%doc AUTHORS ChangeLog NEWS README README.smtpblast README.usmtpd README.tomaildir README.cvs README.systems
-/usr/sbin/usmtpd
-/usr/bin/tomaildir
-/usr/bin/maildirblast
-/usr/bin/smtpblast
-/usr/man/man1/smtpblast.1
-/usr/man/man1/usmtpd.1
-/usr/man/man1/maildirblast.1
-/usr/man/man1/tomaildir.1
+gzip -9nf $RPM_BUILD_ROOT%{_mandir}/man1/* \
+	AUTHORS ChangeLog NEWS README README.smtpblast README.usmtpd \
+	README.tomaildir README.cvs
 
 %clean
 rm -rf $RPM_BUILD_ROOT
+
+%files
+%defattr(644,root,root,755)
+%doc {AUTHORS,ChangeLog,NEWS,README,README.smtpblast,README.usmtpd}.gz
+%doc {README.tomaildir,README.cvs}.gz
+%attr(755,root,root) %{_sbindir}/usmtpd
+%attr(755,root,root) %{_bindir}/tomaildir
+%attr(755,root,root) %{_bindir}/maildirblast
+%attr(755,root,root) %{_bindir}/smtpblast
+%{_mandir}/man1/*
