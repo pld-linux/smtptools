@@ -1,7 +1,7 @@
 Summary:	smtptools - tools for the Simple Mail Transfer Protocol
 Summary(pl):	narzêdzia do przesy³ania poczty poprzez SMTP
 Name:		smtptools
-Version:	0.2.2
+Version:	0.2.3
 Release:	1
 Copyright:	GPL
 Group:		Applications/Communications
@@ -20,14 +20,14 @@ wiadomo¶ci poprzez SMTP.
 %setup -q
 
 %build
-CFLAGS="$RPM_OPT_FLAGS" ./configure --prefix=%{_prefix}
+LDFLAGS="-s"; export LDFLAGS
+%configure
 make
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
-make install prefix=$RPM_BUILD_ROOT%{_prefix} \
-	mandir=$RPM_BUILD_ROOT%{_mandir}
+make install DESTDIR=$RPM_BUILD_ROOT
 
 gzip -9nf $RPM_BUILD_ROOT%{_mandir}/man1/* \
 	AUTHORS ChangeLog NEWS README README.smtpblast README.usmtpd \
