@@ -1,0 +1,17 @@
+--- smtptools-0.2.3/configure.in.orig	1999-01-20 18:49:48.000000000 +0100
++++ smtptools-0.2.3/configure.in	2004-04-08 18:39:38.868494192 +0200
+@@ -54,11 +54,11 @@
+ if test "x$WANT_EFENCE" = x ; then : ;  else
+ 	AC_CHECK_LIB(efence, main)
+ fi
+-AC_CHECK_LIB(resolv, dn_expand)
++AC_CHECK_LIB(resolv, dn_expand,, [AC_CHECK_LIB(resolv, __dn_expand)])
+ dnl SCO needs this.
+-AC_CHECK_LIB(socket,syslog,,,)
++AC_SEARCH_LIBS(syslog, socket)
+ dnl slowlartis needs this
+-AC_CHECK_LIB(nsl,gethostbyname,,,)
++AC_SEARCH_LIBS(gethostbyname, nsl)
+ 
+ 
+ dnl Checks for header files.
