@@ -5,8 +5,6 @@ Version:	0.2.3
 Release:	2
 License:	GPL
 Group:		Applications/Communications
-Group(de):	Applikationen/Kommunikation
-Group(pl):	Aplikacje/Komunikacja
 Source0:	ftp://ftp.ohse.de/uwe/releases/%{name}-%{version}.tar.gz
 BuildRequires:	autoconf
 BuildRequires:	automake
