@@ -37,25 +37,3 @@ make prefix=$RPM_BUILD_ROOT/usr install
 
 %clean
 rm -rf $RPM_BUILD_ROOT
-
-%changelog
-* Mon Dec 21 1998 Uwe Ohse <uwe@ohse.de>
-- stole redhats specfile and hacked it.
-  Redhat people: "Upgraded to 0.12.14 and changed makefiles so 
-  gettext isnt built." is that kind of problem the author would
-  have liked to know.
-
-* Sun Aug 16 1998 Jeff Johnson <jbj@redhat.com>
-- build root
-
-* Thu May 07 1998 Prospector System <bugs@redhat.com>
-- translations modified for de, fr, tr
-
-* Tue Oct 21 1997 Donnie Barnes <djb@redhat.com>
-- spec file cleanups 
-
-* Thu Jul 10 1997 Erik Troan <ewt@redhat.com>
-- built against glibc
-
-* Wed Mar 5 1997 msf@redhat.com <Michael Fulbright>
-- Upgraded to 0.12.14 and changed makefiles so gettext isnt built.
