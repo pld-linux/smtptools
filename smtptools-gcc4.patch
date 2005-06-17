@@ -1,0 +1,13 @@
+--- smtptools-0.2.3/usmtpd.c~	1999-01-20 15:20:31.000000000 +0000
++++ smtptools-0.2.3/usmtpd.c	2005-06-17 19:50:07.994420184 +0000
+@@ -60,8 +60,8 @@
+ /* run */ static const char *reminfo;
+ /* run */ static const char *relayclient;
+ 
+-/* opt */ static unsigned long read_timeout=1200;
+-/* opt */ static unsigned long write_timeout=1200;
++/* opt */ unsigned long read_timeout=1200;
++/* opt */ unsigned long write_timeout=1200;
+ /* opt */ static char *log_spec_str=NULL;
+ /* opt */ static unsigned long aging=0;
+ 
