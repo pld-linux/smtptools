@@ -1,5 +1,5 @@
 Summary:	smtptools - tools for the Simple Mail Transfer Protocol
-Summary(pl.UTF-8):   Narzędzia do przesyłania poczty poprzez SMTP
+Summary(pl.UTF-8):	Narzędzia do przesyłania poczty poprzez SMTP
 Name:		smtptools
 Version:	0.2.3
 Release:	3
