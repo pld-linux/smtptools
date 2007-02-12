@@ -1,5 +1,5 @@
 Summary:	smtptools - tools for the Simple Mail Transfer Protocol
-Summary(pl):	Narzêdzia do przesy³ania poczty poprzez SMTP
+Summary(pl.UTF-8):   NarzÄ™dzia do przesyÅ‚ania poczty poprzez SMTP
 Name:		smtptools
 Version:	0.2.3
 Release:	3
@@ -18,9 +18,9 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 This collection of commands contains tools to send and receive
 messsages with SMTP.
 
-%description -l pl
-To jest kolekcja komend pozwalaj±cych na wysy³anie i odbieranie
-wiadomo¶ci poprzez SMTP.
+%description -l pl.UTF-8
+To jest kolekcja komend pozwalajÄ…cych na wysyÅ‚anie i odbieranie
+wiadomoÅ›ci poprzez SMTP.
 
 %prep
 %setup -q
