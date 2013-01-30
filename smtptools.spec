@@ -9,6 +9,7 @@ Source0:	ftp://ftp.ohse.de/uwe/releases/%{name}-%{version}.tar.gz
 # Source0-md5:	16dd9da7b1b9c7462f207695ae323034
 Patch0:		%{name}-link.patch
 Patch1:		%{name}-gcc4.patch
+Patch2:		%{name}-am.patch
 URL:		http://www.ohse.de/uwe/software/smtptools.html
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -26,6 +27,7 @@ wiadomości poprzez SMTP.
 %setup -q
 %patch0 -p1
 %patch1 -p1
+%patch2 -p1
 
 %build
 %{__aclocal}

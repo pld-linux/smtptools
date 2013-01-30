@@ -1,0 +1,31 @@
+diff -urN smtptools-0.2.3/configure.in smtptools-0.2.3.new/configure.in
+--- smtptools-0.2.3/configure.in	1999-01-20 18:49:48.000000000 +0100
++++ smtptools-0.2.3.new/configure.in	2013-01-30 13:31:47.528274150 +0100
+@@ -1,6 +1,6 @@
+ AC_INIT(smtpblast.c)
+ AM_INIT_AUTOMAKE(smtptools, 0.2.3)
+-AM_CONFIG_HEADER(config.h)
++AC_CONFIG_HEADERS(config.h)
+ 
+ if test "x$CFLAGS" = x ; then
+ 	if test "x$CC" = "xlcc" ; then 
+@@ -48,7 +48,6 @@
+ 	if test "x$GNU_MAKE" = "xno" ; then
+ 		AC_MSG_WARN([dependencies disabled])
+ 	fi
+-AM_C_PROTOTYPES
+ 
+ dnl Checks for libraries.
+ if test "x$WANT_EFENCE" = x ; then : ;  else
+diff -urN smtptools-0.2.3/Makefile.am smtptools-0.2.3.new/Makefile.am
+--- smtptools-0.2.3/Makefile.am	1999-01-20 18:47:56.000000000 +0100
++++ smtptools-0.2.3.new/Makefile.am	2013-01-30 13:31:54.611569109 +0100
+@@ -1,7 +1,7 @@
+ #noinst_SCRIPTS=systype
+ PACKAGE_VERSION=@PACKAGE@-@VERSION@
+ # i can do that better ...
+-AUTOMAKE_OPTIONS=no-dependencies ansi2knr readme-alpha 1.3 gnu
++AUTOMAKE_OPTIONS=no-dependencies readme-alpha 1.3 gnu
+ man_MANS=smtpblast.1 usmtpd.1 tomaildir.1 maildirblast.1 rewriteheader.1
+ EXTRA_DIST= attribs.h crc32ansi.h dirsysdep.h dns.h dynhash.h \
+ 	dns_int.h filelock.h \
